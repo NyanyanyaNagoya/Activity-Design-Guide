@@ -139,10 +139,9 @@ export default function App() {
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-8">
-          <AnimatePresence mode="popLayout">
+          <AnimatePresence>
             {filteredActivities.map((activity, idx) => (
               <motion.div
-                layout
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
@@ -231,14 +230,14 @@ export default function App() {
                 
                 <section className="flex flex-col">
                   <div className="mb-10">
-                    <h2 className="text-3xl md:text-5xl font-serif leading-[0.9] mb-4 text-[#1C1C1C]">{selectedActivity.title}</h2>
+                    <h2 className="text-3xl md:text-5xl font-serif leading-[1.1] mb-4 text-[#1C1C1C]">{selectedActivity.title}</h2>
                     <p className="text-[19px] md:text-lg text-[#8C8279] font-serif italic leading-snug">
                       {selectedActivity.jpTitle}
                     </p>
                   </div>
                   
                   <div className="p-6 md:p-8 border border-[#1C1C1C]/10 bg-white/40">
-                    <p className="text-[21px] md:text-2xl font-sans text-[#2D2926] leading-snug mb-4">{selectedActivity.description}</p>
+                    <p className="text-[20px] md:text-[23px] font-sans text-[#2D2926] leading-snug mb-4">{selectedActivity.description}</p>
                     <p className="text-[15px] md:text-sm text-[#5E5852]">{selectedActivity.jpDescription}</p>
                   </div>
                 </section>
