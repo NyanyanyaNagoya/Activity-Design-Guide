@@ -206,11 +206,11 @@ export default function App() {
               className="fixed inset-y-0 right-0 w-full max-w-4xl bg-[#F9F8F6] shadow-2xl z-50 overflow-y-auto border-l border-[#1C1C1C]/10"
             >
               <div className="sticky top-0 bg-[#F9F8F6]/90 backdrop-blur-md border-b border-[#1C1C1C]/10 px-8 lg:px-12 py-6 flex items-center justify-between z-10">
-                <span className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#8C8279]">Activity Details</span>
+                <span className="text-[11px] md:text-[10px] uppercase tracking-[0.3em] font-semibold text-[#8C8279]">Activity Details</span>
                 <div className="flex items-center gap-6">
                   <button 
                     onClick={() => toggleFavorite(selectedActivity.id)}
-                    className={`transition-colors flex items-center gap-2 text-[10px] uppercase tracking-widest font-bold ${
+                    className={`transition-colors flex items-center gap-2 text-[11px] md:text-[10px] uppercase tracking-widest font-bold ${
                       favorites.includes(selectedActivity.id) ? 'text-[#1C1C1C]' : 'text-[#8C8279] hover:text-[#1C1C1C]'
                     }`}
                   >
@@ -232,29 +232,29 @@ export default function App() {
                 <section className="flex flex-col">
                   <div className="mb-10">
                     <h2 className="text-4xl md:text-6xl font-serif leading-[0.9] mb-4 text-[#1C1C1C]">{selectedActivity.title}</h2>
-                    <p className="text-lg text-[#8C8279] font-serif italic leading-snug">
+                    <p className="text-[19px] md:text-lg text-[#8C8279] font-serif italic leading-snug">
                       {selectedActivity.jpTitle}
                     </p>
                   </div>
                   
                   <div className="p-6 md:p-8 border border-[#1C1C1C]/10 bg-white/40">
-                    <p className="text-xl md:text-2xl font-serif text-[#2D2926] leading-snug mb-4">{selectedActivity.description}</p>
-                    <p className="text-sm text-[#5E5852]">{selectedActivity.jpDescription}</p>
+                    <p className="text-[21px] md:text-2xl font-sans text-[#2D2926] leading-snug mb-4">{selectedActivity.description}</p>
+                    <p className="text-[15px] md:text-sm text-[#5E5852]">{selectedActivity.jpDescription}</p>
                   </div>
                 </section>
 
                 <section>
-                  <h4 className="text-[10px] uppercase tracking-[0.2em] font-black text-[#1C1C1C] border-b border-[#1C1C1C] pb-2 mb-8">
+                  <h4 className="text-[11px] md:text-[10px] uppercase tracking-[0.2em] font-black text-[#1C1C1C] border-b border-[#1C1C1C] pb-2 mb-8">
                     Implementation Steps
                   </h4>
                   <div className="flex flex-col gap-6">
                     {selectedActivity.steps.map((step, idx) => (
                       <div key={idx} className="group">
-                        <div className="text-[11px] font-bold tracking-tighter mb-2 flex items-center gap-2 text-[#1C1C1C]">
-                          <span className="w-6 h-[1px] bg-[#1C1C1C]"></span>
+                        <div className="text-[12px] md:text-[11px] font-bold tracking-tighter mb-2 flex items-center gap-2 text-[#1C1C1C]">
+                          <span className="w-6 h-[2px] shrink-0 bg-[#1C1C1C]"></span>
                           STEP {idx + 1}
                         </div>
-                        <p className="text-sm text-[#5E5852] leading-snug">
+                        <p className="text-[15px] md:text-sm text-[#5E5852] leading-snug">
                           {step}
                         </p>
                       </div>
@@ -263,20 +263,20 @@ export default function App() {
                 </section>
 
                 <section>
-                  <h4 className="text-[10px] uppercase tracking-[0.2em] font-black text-[#1C1C1C] border-b border-[#1C1C1C] pb-2 mb-8">
-                    Phrasing Guide for Selected Roles
+                  <h4 className="text-[11px] md:text-[10px] uppercase tracking-[0.2em] font-black text-[#1C1C1C] border-b border-[#1C1C1C] pb-2 mb-8">
+                    Phrasing Guide
                   </h4>
                   
                   <div className="flex flex-col gap-8">
                     {selectedActivity.roles.map((role, idx) => (
                       <div key={idx} className="flex flex-col md:flex-row gap-4 md:gap-8 items-start">
                         <div className="w-full md:w-32 flex-shrink-0">
-                          <span className="text-xs font-bold uppercase tracking-widest text-[#A67C52] block mb-1">{role.name}</span>
-                          <span className="text-[11px] uppercase tracking-wider text-[#8C8279]">{role.jpName}</span>
+                          <span className="text-[13px] md:text-xs font-bold uppercase tracking-widest text-[#A67C52] block mb-1">{role.name}</span>
+                          <span className="text-[12px] md:text-[11px] uppercase tracking-wider text-[#8C8279]">{role.jpName}</span>
                         </div>
                         <div className="flex-1 md:border-l border-[#1C1C1C]/10 md:pl-8 space-y-3">
                           {role.phrases.map((phrase, pIdx) => (
-                            <p key={pIdx} className="text-sm text-[#5E5852] leading-snug">
+                            <p key={pIdx} className="text-[15px] md:text-sm text-[#5E5852] leading-snug">
                               "{phrase}"
                             </p>
                           ))}
