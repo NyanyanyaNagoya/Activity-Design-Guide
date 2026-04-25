@@ -253,7 +253,7 @@ export default function App() {
                           <span className="w-6 h-[2px] shrink-0 bg-[#1C1C1C]"></span>
                           STEP {idx + 1}
                         </div>
-                        <p className="text-[15px] md:text-sm text-[#5E5852] leading-snug">
+                        <p className="text-[16px] md:text-[15px] text-[#2D2926] leading-relaxed font-medium">
                           {step}
                         </p>
                       </div>
@@ -275,7 +275,7 @@ export default function App() {
                         </div>
                         <div className="flex-1 md:border-l border-[#1C1C1C]/10 md:pl-8 space-y-3">
                           {role.phrases.map((phrase, pIdx) => (
-                            <p key={pIdx} className="text-[15px] md:text-sm text-[#5E5852] leading-snug">
+                            <p key={pIdx} className="text-[16px] md:text-[15px] text-[#2D2926] leading-relaxed font-medium">
                               "{phrase}"
                             </p>
                           ))}
