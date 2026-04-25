@@ -96,8 +96,8 @@ export default function App() {
                       : 'text-[#8C8279] hover:text-[#1C1C1C]'
                   }`}
                 >
-                  <span className={`text-[11px] uppercase tracking-widest font-bold ${
-                    selectedCategory === category.id ? 'border-b border-[#1C1C1C] pb-0.5 w-max' : ''
+                  <span className={`text-[11px] uppercase tracking-widest font-bold leading-normal ${
+                    selectedCategory === category.id ? 'border-b border-[#1C1C1C] pb-0.5' : ''
                   }`}>
                     {category.name}
                   </span>
@@ -139,13 +139,8 @@ export default function App() {
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-8">
-          <AnimatePresence>
             {filteredActivities.map((activity, idx) => (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4, delay: Math.min(idx * 0.05, 0.4) }}
+              <div
                 key={activity.id}
                 onClick={() => setSelectedActivity(activity)}
                 className="group relative cursor-pointer bg-white/40 border border-[#1C1C1C]/10 p-8 flex flex-col transition-all duration-300 hover:bg-white/80 hover:shadow-sm scale-[1.03] md:scale-100"
@@ -170,9 +165,8 @@ export default function App() {
                 <p className="text-[16px] md:text-sm text-[#5E5852] leading-relaxed line-clamp-3 mt-auto">
                   {activity.description}
                 </p>
-              </motion.div>
+              </div>
             ))}
-          </AnimatePresence>
         </div>
         
         {/* Footer Decorative */}
