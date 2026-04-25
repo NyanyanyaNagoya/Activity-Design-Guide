@@ -231,7 +231,7 @@ export default function App() {
                 
                 <section className="flex flex-col">
                   <div className="mb-10">
-                    <h2 className="text-4xl md:text-6xl font-serif leading-[0.9] mb-4 text-[#1C1C1C]">{selectedActivity.title}</h2>
+                    <h2 className="text-3xl md:text-5xl font-serif leading-[0.9] mb-4 text-[#1C1C1C]">{selectedActivity.title}</h2>
                     <p className="text-[19px] md:text-lg text-[#8C8279] font-serif italic leading-snug">
                       {selectedActivity.jpTitle}
                     </p>
