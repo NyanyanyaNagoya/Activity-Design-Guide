@@ -110,8 +110,8 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="flex-1 p-8 md:p-12 lg:p-16 overflow-y-auto relative z-10 w-full overflow-x-hidden">
-        <header className="mb-12 border-b border-[#1C1C1C]/10 pb-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-8">
+        <header className="mb-4 xl:mb-12 border-b-0 xl:border-b border-[#1C1C1C]/10 pb-0 xl:pb-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 mb-4 xl:mb-8">
             <div className="flex flex-col">
               <span className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#8C8279] mb-2">
                 {showFavorites ? 'Your Collection' : (selectedCategory ? 'Selected Section' : 'Overview')}
