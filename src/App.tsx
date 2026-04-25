@@ -58,31 +58,33 @@ export default function App() {
           </h1>
         </div>
         
-        <nav className="flex-1 overflow-y-auto py-8 px-8 flex flex-col gap-6">
-          <button
-            onClick={() => { setSelectedCategory(null); setShowFavorites(false); }}
-            className={`text-[11px] uppercase tracking-widest font-bold text-left transition-colors flex items-center ${
-              selectedCategory === null && !showFavorites
-                ? 'text-[#1C1C1C] border-b border-[#1C1C1C] pb-1 w-max' 
-                : 'text-[#8C8279] hover:text-[#1C1C1C]'
-            }`}
-          >
-            <span>List of Methods</span>
-          </button>
+        <nav className="flex-1 overflow-y-auto py-8 px-8 flex flex-col gap-6 md:gap-6">
+          <div className="flex items-center justify-between md:flex-col md:items-start md:gap-6">
+            <button
+              onClick={() => { setSelectedCategory(null); setShowFavorites(false); }}
+              className={`text-[11px] uppercase tracking-widest font-bold text-left transition-colors flex items-center ${
+                selectedCategory === null && !showFavorites
+                  ? 'text-[#1C1C1C] border-b border-[#1C1C1C] pb-1 w-max' 
+                  : 'text-[#8C8279] hover:text-[#1C1C1C]'
+              }`}
+            >
+              <span>List of Methods</span>
+            </button>
+            
+            <button
+              onClick={() => { setSelectedCategory(null); setShowFavorites(true); }}
+              className={`text-[11px] uppercase tracking-widest font-bold text-left transition-colors flex items-center gap-2 ${
+                showFavorites 
+                  ? 'text-[#1C1C1C] border-b border-[#1C1C1C] pb-1 w-max' 
+                  : 'text-[#8C8279] hover:text-[#1C1C1C]'
+              }`}
+            >
+              <Heart className={`w-3.5 h-3.5 ${showFavorites ? 'fill-[#1C1C1C]' : ''}`} />
+              <span>Favorites</span>
+            </button>
+          </div>
           
-          <button
-            onClick={() => { setSelectedCategory(null); setShowFavorites(true); }}
-            className={`text-[11px] uppercase tracking-widest font-bold text-left transition-colors flex items-center gap-2 ${
-              showFavorites 
-                ? 'text-[#1C1C1C] border-b border-[#1C1C1C] pb-1 w-max' 
-                : 'text-[#8C8279] hover:text-[#1C1C1C]'
-            }`}
-          >
-            <Heart className={`w-3.5 h-3.5 ${showFavorites ? 'fill-[#1C1C1C]' : ''}`} />
-            <span>Favorites</span>
-          </button>
-          
-          <div className="mt-4">
+          <div className={`mt-4 md:mt-0 ${showFavorites ? 'hidden md:block' : ''}`}>
             <div className="flex flex-col gap-5">
               {categories.map(category => (
                 <button
