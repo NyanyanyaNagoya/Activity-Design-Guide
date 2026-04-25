@@ -51,9 +51,9 @@ export default function App() {
       <div className="fixed top-0 right-0 w-1/3 h-full bg-[#EAE7E2] opacity-50 pointer-events-none z-0 hidden lg:block"></div>
 
       {/* Sidebar Navigation */}
-      <aside className="w-full md:w-72 border-r border-[#1C1C1C]/10 flex flex-col pt-8 md:h-screen md:sticky md:top-0 z-10 shrink-0 bg-[#F9F8F6]">
+      <aside className="w-full md:w-64 lg:w-72 xl:w-80 border-r border-[#1C1C1C]/10 flex flex-col pt-8 md:h-screen md:sticky md:top-0 z-10 shrink-0 bg-[#F9F8F6]">
         <div className="px-8 pb-8 border-b border-[#1C1C1C]/10">
-          <h1 className="text-[clamp(1.4rem,6.5vw,2.25rem)] md:text-4xl font-serif italic tracking-tight text-[#2D2926] leading-tight whitespace-nowrap md:whitespace-normal">
+          <h1 className="text-[clamp(1.4rem,6.5vw,2.25rem)] md:text-[1.25rem] lg:text-[1.5rem] xl:text-3xl font-serif italic tracking-tight text-[#2D2926] leading-tight whitespace-nowrap xl:whitespace-normal">
             Activity Design Guide
           </h1>
         </div>
@@ -116,7 +116,7 @@ export default function App() {
               <span className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#8C8279] mb-2">
                 {showFavorites ? 'Your Collection' : (selectedCategory ? 'Selected Section' : 'Overview')}
               </span>
-              <h2 className="text-3xl md:text-4xl lg:text-6xl font-serif italic tracking-tight text-[#2D2926]">
+              <h2 className="text-3xl md:text-3xl lg:text-4xl xl:text-6xl font-serif italic tracking-tight text-[#2D2926] whitespace-nowrap">
                 {showFavorites 
                   ? 'Favorites'
                   : (selectedCategory 
@@ -125,7 +125,7 @@ export default function App() {
               </h2>
             </div>
             
-            <div className="relative w-full md:w-64 lg:w-80 shrink-0">
+            <div className="relative w-full md:w-48 lg:w-64 xl:w-80 shrink-0">
               <input 
                 type="text" 
                 placeholder="Search..." 
