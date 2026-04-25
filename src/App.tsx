@@ -53,7 +53,7 @@ export default function App() {
       {/* Sidebar Navigation */}
       <aside className="w-full md:w-64 lg:w-72 xl:w-80 border-r border-[#1C1C1C]/10 flex flex-col pt-8 md:h-screen md:sticky md:top-0 z-10 shrink-0 bg-[#F9F8F6]">
         <div className="px-8 pb-8 border-b border-[#1C1C1C]/10">
-          <h1 className="text-[clamp(1.4rem,6.5vw,2.25rem)] md:text-[1.25rem] lg:text-[1.5rem] xl:text-3xl font-serif italic tracking-tight text-[#2D2926] leading-tight whitespace-nowrap xl:whitespace-normal">
+          <h1 className="text-[clamp(1.7rem,7.5vw,2.75rem)] md:text-[1.25rem] lg:text-[1.5rem] xl:text-3xl font-serif italic tracking-tight text-[#2D2926] leading-tight whitespace-nowrap xl:whitespace-normal">
             Activity Design Guide
           </h1>
         </div>
@@ -116,11 +116,16 @@ export default function App() {
               <span className="text-[10px] uppercase tracking-[0.3em] font-semibold text-[#8C8279] mb-2">
                 {showFavorites ? 'Your Collection' : (selectedCategory ? 'Selected Section' : 'Overview')}
               </span>
-              <h2 className="text-3xl md:text-3xl lg:text-4xl xl:text-6xl font-serif italic tracking-tight text-[#2D2926] whitespace-nowrap">
+              <h2 className="text-[27px] md:text-3xl lg:text-4xl xl:text-6xl font-serif italic tracking-tight text-[#2D2926] leading-tight">
                 {showFavorites 
                   ? 'Favorites'
                   : (selectedCategory 
-                      ? categories.find(c => c.id === selectedCategory)?.name 
+                      ? (
+                        <span className="flex items-baseline gap-[0.3em]">
+                          <span className="shrink-0">{categories.find(c => c.id === selectedCategory)?.name.split('. ')[0]}.</span>
+                          <span>{categories.find(c => c.id === selectedCategory)?.name.split('. ')[1]}</span>
+                        </span>
+                      )
                       : 'All Activities')}
               </h2>
             </div>
