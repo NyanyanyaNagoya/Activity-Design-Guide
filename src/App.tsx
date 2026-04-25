@@ -53,8 +53,8 @@ export default function App() {
       {/* Sidebar Navigation */}
       <aside className="w-full md:w-72 border-r border-[#1C1C1C]/10 flex flex-col pt-8 md:h-screen md:sticky md:top-0 z-10 shrink-0 bg-[#F9F8F6]">
         <div className="px-8 pb-8 border-b border-[#1C1C1C]/10">
-          <h1 className="text-4xl font-serif italic tracking-tight text-[#2D2926] leading-tight">
-            Activity Design <br/> Guide
+          <h1 className="text-[clamp(1.4rem,6.5vw,2.25rem)] md:text-4xl font-serif italic tracking-tight text-[#2D2926] leading-tight whitespace-nowrap md:whitespace-normal">
+            Activity Design Guide
           </h1>
         </div>
         
@@ -147,7 +147,7 @@ export default function App() {
                 transition={{ duration: 0.4, delay: Math.min(idx * 0.05, 0.4) }}
                 key={activity.id}
                 onClick={() => setSelectedActivity(activity)}
-                className="group relative cursor-pointer bg-white/40 border border-[#1C1C1C]/10 p-8 flex flex-col transition-all duration-300 hover:bg-white/80 hover:shadow-sm"
+                className="group relative cursor-pointer bg-white/40 border border-[#1C1C1C]/10 p-8 flex flex-col transition-all duration-300 hover:bg-white/80 hover:shadow-sm scale-[1.03] md:scale-100"
               >
                 <div className="absolute top-6 right-6 z-10">
                   <button 
@@ -166,7 +166,7 @@ export default function App() {
                 <h3 className="text-xl lg:text-2xl font-serif leading-tight text-[#2D2926] mb-2 pr-10">{activity.title}</h3>
                 <p className="text-sm text-[#8C8279] mb-6 font-serif italic">{activity.jpTitle}</p>
                 
-                <p className="text-sm text-[#5E5852] leading-relaxed line-clamp-3 mt-auto">
+                <p className="text-[16px] md:text-sm text-[#5E5852] leading-relaxed line-clamp-3 mt-auto">
                   {activity.description}
                 </p>
               </motion.div>
@@ -177,11 +177,7 @@ export default function App() {
         {/* Footer Decorative */}
         <footer className="mt-16 pt-8 border-t border-[#1C1C1C]/10 flex justify-between items-end text-[#8C8279] pb-8 md:pb-0">
           <div className="text-[10px] uppercase tracking-[0.2em]">
-            Instructional Design System © 2026
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-[1px] bg-[#8C8279]/30"></div>
-            <span className="font-serif italic text-lg text-[#1C1C1C]">End.</span>
+            Copyright © 2026 Albert Pai. All rights reserved.
           </div>
         </footer>
       </main>
